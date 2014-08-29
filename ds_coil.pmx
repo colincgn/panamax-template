@@ -7,4 +7,23 @@ documentation: ''
 images:
 - name: postgres_9.4
   source: postgres:9.4
+  category: Database
   type: Default
+- name: sdcsoftware_coil-db-1.7-init
+  source: sdcsoftware/coil-db-1.7-init:latest
+  category: DB Initializer
+  type: Default
+  links:
+  - service: postgres_9.4
+    alias: db
+- name: sdcsoftware_coil-develop-branch
+  source: sdcsoftware/coil-develop-branch:latest
+  category: Application
+  type: Default
+  ports:
+  - host_port: ''
+    container_port: '80'
+    proto: TCP
+  links:
+  - service: postgres_9.4
+    alias: db
