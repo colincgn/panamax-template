@@ -1,0 +1,10 @@
+---
+name: DS Coil
+description: ''
+keywords: ''
+type: LAMP
+documentation: ''
+images:
+- name: postgres_9.4
+  source: postgres:9.4
+  type: Default
